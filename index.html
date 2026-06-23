@@ -2,11 +2,12 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>BondStats Future Finance Lab</title>
 
 <style>
+
 *{
 margin:0;
 padding:0;
@@ -14,271 +15,444 @@ box-sizing:border-box;
 }
 
 :root{
---bg:#030712;
---panel:#07111f;
---panel2:#0b1828;
---line:rgba(255,255,255,.12);
+
+--bg:#030813;
+--panel:#091320;
+--panel2:#0d1b2d;
+--line:rgba(255,255,255,.10);
+
 --gold:#f7c84b;
 --cyan:#4eeeff;
 --purple:#9b5cff;
---green:#65ff9a;
---red:#ff5d73;
+--green:#64ff9d;
+
 --text:#ffffff;
---muted:#aebdcc;
+--muted:#aebccd;
+
 }
 
 body{
+
 font-family:Arial,sans-serif;
+
 background:
-radial-gradient(circle at 20% 10%,rgba(78,238,255,.13),transparent 30%),
-radial-gradient(circle at 80% 0%,rgba(155,92,255,.16),transparent 26%),
-radial-gradient(circle at 50% 100%,rgba(247,200,75,.10),transparent 30%),
+radial-gradient(circle at top left,rgba(78,238,255,.08),transparent 30%),
+radial-gradient(circle at top right,rgba(155,92,255,.10),transparent 30%),
+radial-gradient(circle at bottom center,rgba(247,200,75,.06),transparent 35%),
 var(--bg);
-color:var(--text);
+
+color:white;
+
 overflow-x:hidden;
+
 }
 
 .container{
-width:min(1400px,92%);
+
+width:min(1450px,92%);
 margin:auto;
+
 }
 
 nav{
+
 position:sticky;
 top:0;
 z-index:100;
+
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:20px 7%;
-background:rgba(3,7,18,.78);
-backdrop-filter:blur(24px);
+
+padding:22px 7%;
+
+background:rgba(3,8,19,.85);
+
+backdrop-filter:blur(20px);
+
 border-bottom:1px solid var(--line);
+
 }
 
 .logo{
-font-size:28px;
+
+font-size:30px;
 font-weight:900;
-letter-spacing:-1px;
+
 }
 
 .logo span{
+
 color:var(--gold);
+
 }
 
-.nav-label{
-color:var(--muted);
+.nav-text{
+
 font-size:13px;
-letter-spacing:2px;
+
+letter-spacing:3px;
+
+color:var(--muted);
+
 text-transform:uppercase;
+
 }
 
 .hero{
-padding:95px 0 70px;
+
+padding:100px 0 70px;
+
 display:grid;
+
 grid-template-columns:1fr 1fr;
-gap:60px;
+
+gap:70px;
+
 align-items:center;
+
 }
 
 .small{
+
 font-size:13px;
-letter-spacing:3px;
-text-transform:uppercase;
+
+letter-spacing:4px;
+
 color:var(--gold);
+
 font-weight:800;
-margin-bottom:22px;
+
+text-transform:uppercase;
+
+margin-bottom:25px;
+
 }
 
 h1{
-font-size:clamp(56px,8vw,105px);
+
+font-size:clamp(60px,8vw,110px);
+
 line-height:.88;
+
 letter-spacing:-4px;
-margin-bottom:32px;
+
+margin-bottom:35px;
+
 }
 
 .hero p{
+
 font-size:23px;
-line-height:1.75;
+
+line-height:1.8;
+
 color:var(--muted);
-max-width:820px;
+
+max-width:850px;
+
 }
 
-.lab-visual{
-min-height:470px;
-border-radius:42px;
-background:linear-gradient(135deg,rgba(255,255,255,.07),rgba(255,255,255,.025));
-border:1px solid var(--line);
+.hero p span{
+
+color:var(--cyan);
+
+font-weight:700;
+
+}
+
+.future-core{
+
 position:relative;
+
+height:520px;
+
+border-radius:40px;
+
 overflow:hidden;
+
+background:linear-gradient(135deg,
+rgba(255,255,255,.05),
+rgba(255,255,255,.02));
+
+border:1px solid var(--line);
+
 display:flex;
-align-items:center;
 justify-content:center;
-box-shadow:0 35px 100px rgba(0,0,0,.45);
-}
+align-items:center;
 
-.lab-visual:before{
-content:"";
-position:absolute;
-inset:-50%;
-background:conic-gradient(
-transparent,
-rgba(78,238,255,.20),
-transparent,
-rgba(247,200,75,.22),
-transparent,
-rgba(155,92,255,.22),
-transparent
-);
-animation:spin 20s linear infinite;
-}
-
-@keyframes spin{
-100%{transform:rotate(360deg);}
 }
 
 .orbit{
+
 position:absolute;
-border:1px dashed rgba(247,200,75,.28);
+
+border:1px dashed rgba(255,255,255,.15);
+
 border-radius:50%;
-z-index:1;
+
+animation:rotate 35s linear infinite;
+
 }
 
-.orbit.one{
-width:300px;
-height:300px;
+.orbit1{
+
+width:260px;
+height:260px;
+
 }
 
-.orbit.two{
-width:430px;
-height:430px;
-opacity:.65;
+.orbit2{
+
+width:390px;
+height:390px;
+
+animation-duration:50s;
+
+}
+
+.orbit3{
+
+width:500px;
+height:500px;
+
+animation-duration:70s;
+
+}
+
+@keyframes rotate{
+
+100%{
+
+transform:rotate(360deg);
+
+}
+
 }
 
 .core{
-position:relative;
-z-index:3;
+
 width:170px;
 height:170px;
+
 border-radius:50%;
+
+background:linear-gradient(135deg,var(--cyan),var(--purple));
+
 display:flex;
-align-items:center;
 justify-content:center;
+align-items:center;
+
 text-align:center;
+
 font-weight:900;
-background:
-radial-gradient(circle at 30% 25%,#ffffff,transparent 12%),
-linear-gradient(135deg,var(--cyan),var(--purple));
+
+font-size:22px;
+
+color:#041019;
+
 box-shadow:
-0 0 70px rgba(78,238,255,.35),
-0 0 120px rgba(155,92,255,.22);
-color:#020611;
+
+0 0 40px rgba(78,238,255,.35),
+0 0 120px rgba(155,92,255,.2);
+
+z-index:5;
+
 }
 
-.chip{
+.node{
+
 position:absolute;
-z-index:4;
-padding:13px 18px;
-border-radius:18px;
-background:rgba(3,7,18,.75);
-border:1px solid rgba(255,255,255,.15);
-backdrop-filter:blur(18px);
-font-weight:800;
-box-shadow:0 0 25px rgba(78,238,255,.08);
+
+padding:15px 20px;
+
+background:rgba(9,19,32,.9);
+
+border:1px solid rgba(255,255,255,.12);
+
+border-radius:20px;
+
+font-weight:700;
+
+backdrop-filter:blur(20px);
+
+font-size:14px;
+
 }
 
-.chip.a{top:38px;left:50%;transform:translateX(-50%);}
-.chip.b{right:28px;top:45%;}
-.chip.c{bottom:42px;right:82px;}
-.chip.d{bottom:42px;left:82px;}
-.chip.e{left:28px;top:45%;}
+.node1{
+
+top:30px;
+left:50%;
+transform:translateX(-50%);
+
+}
+
+.node2{
+
+right:40px;
+top:50%;
+
+}
+
+.node3{
+
+bottom:35px;
+right:110px;
+
+}
+
+.node4{
+
+bottom:35px;
+left:110px;
+
+}
+
+.node5{
+
+left:40px;
+top:50%;
+
+}
 
 .section{
-margin-top:35px;
-background:linear-gradient(135deg,rgba(255,255,255,.065),rgba(255,255,255,.025));
+
+margin-top:40px;
+
+background:linear-gradient(
+135deg,
+rgba(255,255,255,.05),
+rgba(255,255,255,.02));
+
 border:1px solid var(--line);
-border-radius:36px;
-padding:40px;
-backdrop-filter:blur(22px);
-box-shadow:0 22px 80px rgba(0,0,0,.3);
+
+border-radius:40px;
+
+padding:45px;
+
 }
 
 .section h2{
+
 font-size:42px;
-margin-bottom:12px;
-letter-spacing:-1px;
+
+margin-bottom:15px;
+
 }
 
 .section p{
+
 color:var(--muted);
-line-height:1.75;
-font-size:18px;
-margin-bottom:34px;
+
+line-height:1.8;
+
+margin-bottom:35px;
+
 }
 
 .scenario-grid{
+
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
-gap:18px;
+
+grid-template-columns:
+
+repeat(auto-fit,minmax(240px,1fr));
+
+gap:20px;
+
 }
 
 .future-btn{
-padding:22px;
-border-radius:22px;
-border:1px solid var(--line);
-background:#07111f;
-color:white;
-font-size:17px;
-font-weight:800;
-text-align:left;
-cursor:pointer;
-transition:.25s;
-min-height:110px;
-}
 
-.future-btn span{
-display:block;
-font-size:13px;
-font-weight:400;
-color:var(--muted);
-line-height:1.5;
-margin-top:10px;
+background:var(--panel);
+
+border:1px solid var(--line);
+
+padding:25px;
+
+border-radius:25px;
+
+color:white;
+
+text-align:left;
+
+cursor:pointer;
+
+transition:.3s;
+
+min-height:120px;
+
 }
 
 .future-btn:hover{
-border-color:var(--gold);
+
 transform:translateY(-4px);
-box-shadow:0 0 28px rgba(247,200,75,.16);
+
+border-color:var(--gold);
+
 }
 
 .future-btn.active{
+
 border-color:var(--cyan);
-box-shadow:0 0 30px rgba(78,238,255,.20);
+
+box-shadow:
+
+0 0 30px rgba(78,238,255,.15);
+
+}
+
+.future-btn strong{
+
+display:block;
+
+font-size:18px;
+
+margin-bottom:10px;
+
+}
+
+.future-btn span{
+
+color:var(--muted);
+
+font-size:14px;
+
+line-height:1.6;
+
 }
 
 @media(max-width:1000px){
+
 .hero{
+
 grid-template-columns:1fr;
+
 }
 
-.nav-label{
-display:none;
-}
 }
 
-@media(max-width:700px){
-h1{
-letter-spacing:-2px;
-}
-}
 </style>
+
 </head>
 
 <body>
 
 <nav>
-<div class="logo">Bond<span>Stats</span></div>
-<div class="nav-label">Future Finance Lab</div>
+
+<div class="logo">
+
+Bond<span>Stats</span>
+
+</div>
+
+<div class="nav-text">
+
+Future Finance Lab
+
+</div>
+
 </nav>
 
 <div class="container">
@@ -288,37 +462,85 @@ letter-spacing:-2px;
 <div>
 
 <div class="small">
+
 BondStats Future Finance Lab
+
 </div>
 
 <h1>
+
+Explore<br>
 Future<br>
-Finance<br>
-Simulator.
+Finance
+
 </h1>
 
 <p>
-Explore how tokenization, blockchain settlement, digital collateral and next-generation financial infrastructure could reshape money, markets and systemic risk.
+
+A futuristic framework for understanding how
+
+<span>tokenization</span>,
+
+<span>CBDCs</span>,
+
+<span>AI infrastructure</span>,
+
+<span>stablecoins</span>
+
+and digital financial networks could reshape money, markets and settlement.
+
 <br><br>
-Not prediction. Strategic imagination.
+
+Not prediction.
+
+Understanding possible futures.
+
 </p>
 
 </div>
 
-<div class="lab-visual">
+<div class="future-core">
 
-<div class="orbit one"></div>
-<div class="orbit two"></div>
+<div class="orbit orbit1"></div>
+<div class="orbit orbit2"></div>
+<div class="orbit orbit3"></div>
 
 <div class="core">
-FUTURE<br>FINANCE<br>CORE
+
+FUTURE<br>
+CORE
+
 </div>
 
-<div class="chip a">Tokenized Bonds</div>
-<div class="chip b">CBDC Rails</div>
-<div class="chip c">Stablecoins</div>
-<div class="chip d">Digital Collateral</div>
-<div class="chip e">On-chain Settlement</div>
+<div class="node node1">
+
+CBDC Rails
+
+</div>
+
+<div class="node node2">
+
+AI Infrastructure
+
+</div>
+
+<div class="node node3">
+
+Tokenized Bonds
+
+</div>
+
+<div class="node node4">
+
+Stablecoins
+
+</div>
+
+<div class="node node5">
+
+Digital Identity
+
+</div>
 
 </div>
 
@@ -329,53 +551,89 @@ FUTURE<br>FINANCE<br>CORE
 <section class="section">
 
 <h2>
+
 Scenario Engine
+
 </h2>
 
 <p>
-Select a future-finance scenario and explore potential impacts across markets, institutions, settlement systems and financial stability.
+
+Select a scenario and explore how future financial infrastructures could evolve.
+
 </p>
 
 <div class="scenario-grid">
 
 <button class="future-btn active" data-scenario="tokenizedBonds">
-Tokenized Bonds
-<span>Digital government and corporate bonds with faster settlement and programmable ownership.</span>
+
+<strong>Tokenized Bonds</strong>
+
+<span>
+
+Programmable debt and digital securities.
+
+</span>
+
 </button>
 
 <button class="future-btn" data-scenario="cbdc">
-CBDC Settlement
-<span>Central bank digital money used for wholesale settlement and payment infrastructure.</span>
+
+<strong>CBDC Settlement</strong>
+
+<span>
+
+Central bank digital settlement networks.
+
+</span>
+
 </button>
 
 <button class="future-btn" data-scenario="stablecoins">
-Stablecoin Liquidity
-<span>Private digital money rails affecting payments, liquidity and cross-border flows.</span>
-</button>
 
-<button class="future-btn" data-scenario="collateral">
-On-chain Collateral
-<span>Collateral that can move, settle and be verified across digital market infrastructure.</span>
+<strong>Stablecoins</strong>
+
+<span>
+
+Private digital money ecosystems.
+
+</span>
+
 </button>
 
 <button class="future-btn" data-scenario="rwa">
-Real World Assets
-<span>Tokenized funds, credit, property and financial claims represented on digital rails.</span>
-</button>
 
-<button class="future-btn" data-scenario="identity">
-Digital Identity
-<span>Verified identity layers for markets, compliance, ownership and institutional access.</span>
+<strong>Real World Assets</strong>
+
+<span>
+
+Tokenized assets and collateral.
+
+</span>
+
 </button>
 
 <button class="future-btn" data-scenario="ai">
-AI Finance Infrastructure
-<span>AI-assisted monitoring, supervision, risk mapping and market infrastructure automation.</span>
+
+<strong>AI Infrastructure</strong>
+
+<span>
+
+AI supervision and automation.
+
+</span>
+
 </button>
 
 <button class="future-btn" data-scenario="crossborder">
-Cross-Border Rails
-<span>Programmable settlement networks for international payments and liquidity movement.</span>
+
+<strong>Cross-Border Rails</strong>
+
+<span>
+
+Programmable international settlement.
+
+</span>
+
 </button>
 
 </div>
@@ -384,33 +642,84 @@ Cross-Border Rails
 <section class="section">
 
 <h2>
+
 Future Impact Dashboard
+
 </h2>
 
 <p>
-Observe how different technological architectures could affect liquidity, efficiency, financial stability and adoption pathways.
+
+Monitor how different future architectures could influence efficiency, stability, adoption and transformation speed.
+
 </p>
 
 <div class="dashboard-grid">
 
 <div class="metric-card">
-<div class="metric-title">Infrastructure Readiness</div>
-<div class="metric-value" id="readinessValue">74</div>
+
+<div class="metric-title">
+
+Infrastructure Readiness
+
 </div>
 
-<div class="metric-card">
-<div class="metric-title">Financial Stability Impact</div>
-<div class="metric-state" id="stabilityValue">Moderate</div>
+<div class="metric-value" id="readinessValue">
+
+81
+
 </div>
 
-<div class="metric-card">
-<div class="metric-title">Adoption Probability</div>
-<div class="metric-state" id="adoptionValue">High</div>
 </div>
 
+
 <div class="metric-card">
-<div class="metric-title">Transformation Speed</div>
-<div class="metric-state" id="speedValue">Gradual</div>
+
+<div class="metric-title">
+
+Financial Stability
+
+</div>
+
+<div class="metric-state" id="stabilityValue">
+
+Moderate
+
+</div>
+
+</div>
+
+
+<div class="metric-card">
+
+<div class="metric-title">
+
+Adoption Probability
+
+</div>
+
+<div class="metric-state" id="adoptionValue">
+
+High
+
+</div>
+
+</div>
+
+
+<div class="metric-card">
+
+<div class="metric-title">
+
+Transformation Speed
+
+</div>
+
+<div class="metric-state" id="speedValue">
+
+Gradual
+
+</div>
+
 </div>
 
 </div>
@@ -418,69 +727,114 @@ Observe how different technological architectures could affect liquidity, effici
 </section>
 
 
+
 <section class="section">
 
 <h2>
+
 Transmission Channels
+
 </h2>
 
 <p>
-Potential channels through which future financial infrastructure may propagate through markets and institutions.</p>
 
-<div class="transmission-grid">
+Visualizing how technological change may propagate through the financial system.
 
-<div class="transmission-card">
+</p>
 
-<h3>Payments</h3>
+<div class="channel-grid">
 
-<div class="bar-bg">
-<div class="bar-fill cyan" id="paymentsBar"></div>
-</div>
 
-<div class="bar-text" id="paymentsText">
-Faster settlement infrastructure.
-</div>
+<div class="channel-card">
 
-</div>
+<h3>
 
-<div class="transmission-card">
+Payments
 
-<h3>Bond Markets</h3>
+</h3>
 
 <div class="bar-bg">
-<div class="bar-fill gold" id="bondBar"></div>
-</div>
 
-<div class="bar-text" id="bondText">
-Programmable securities and tokenization.
-</div>
+<div class="bar-fill cyan" id="paymentsBar" style="width:85%"></div>
 
 </div>
 
-<div class="transmission-card">
+<div class="channel-text">
 
-<h3>Banking System</h3>
+Settlement efficiency and payment infrastructure.
+
+</div>
+
+</div>
+
+
+
+<div class="channel-card">
+
+<h3>
+
+Bond Markets
+
+</h3>
 
 <div class="bar-bg">
-<div class="bar-fill purple" id="bankBar"></div>
-</div>
 
-<div class="bar-text" id="bankText">
-Digital infrastructure integration.
-</div>
+<div class="bar-fill gold" id="bondBar" style="width:95%"></div>
 
 </div>
 
-<div class="transmission-card">
+<div class="channel-text">
 
-<h3>Cross-Border Finance</h3>
+Digital securities and programmable debt.
+
+</div>
+
+</div>
+
+
+
+<div class="channel-card">
+
+<h3>
+
+Banking System
+
+</h3>
 
 <div class="bar-bg">
-<div class="bar-fill green" id="crossBar"></div>
+
+<div class="bar-fill purple" id="bankBar" style="width:76%"></div>
+
 </div>
 
-<div class="bar-text" id="crossText">
-Improved global settlement efficiency.
+<div class="channel-text">
+
+Liquidity, custody and infrastructure.
+
+</div>
+
+</div>
+
+
+
+<div class="channel-card">
+
+<h3>
+
+Cross-Border Finance
+
+</h3>
+
+<div class="bar-bg">
+
+<div class="bar-fill green" id="crossBar" style="width:80%"></div>
+
+</div>
+
+<div class="channel-text">
+
+International settlement and interoperability.
+
 </div>
 
 </div>
@@ -490,99 +844,109 @@ Improved global settlement efficiency.
 </section>
 
 
+
+
 <section class="section">
 
 <h2>
+
 Institutional Implications
+
 </h2>
 
 <p>
-Potential implications for central banks, commercial banks, market participants and regulators.</p>
+
+Potential impact across major institutions and infrastructures.
+
+</p>
 
 <div class="institution-grid">
 
+
 <div class="institution-card">
-<h3>Central Banks</h3>
+
+<h3>
+
+Central Banks
+
+</h3>
+
 <ul id="cbList">
-<li>Wholesale CBDC frameworks</li>
+
+<li>Wholesale CBDC pilots</li>
+
+<li>Liquidity management</li>
+
 <li>Settlement modernization</li>
-<li>Liquidity supervision</li>
+
 </ul>
+
 </div>
 
+
+
 <div class="institution-card">
-<h3>Commercial Banks</h3>
+
+<h3>
+
+Commercial Banks
+
+</h3>
+
 <ul id="bankList">
-<li>Digital custody services</li>
+
 <li>Tokenized deposits</li>
+
+<li>Digital custody</li>
+
 <li>Infrastructure upgrades</li>
+
 </ul>
+
 </div>
 
+
+
 <div class="institution-card">
-<h3>Capital Markets</h3>
+
+<h3>
+
+Capital Markets
+
+</h3>
+
 <ul id="marketList">
+
 <li>Programmable securities</li>
+
+<li>Digital issuance</li>
+
 <li>24/7 settlement</li>
-<li>Reduced friction</li>
+
 </ul>
+
 </div>
+
+
 
 <div class="institution-card">
-<h3>Regulators</h3>
+
+<h3>
+
+Regulators
+
+</h3>
+
 <ul id="regList">
-<li>Digital asset standards</li>
-<li>Identity frameworks</li>
+
+<li>Digital frameworks</li>
+
 <li>Cyber resilience</li>
+
+<li>New standards</li>
+
 </ul>
-</div>
 
-</div>
-
-</section>
-
-
-<section class="section">
-
-<h2>
-Future Readiness Matrix
-</h2>
-
-<div class="matrix-grid">
-
-<div class="matrix-card">
-<div class="matrix-score" id="efficiencyScore">88</div>
-<div class="matrix-label">
-Efficiency
-</div>
-</div>
-
-<div class="matrix-card">
-<div class="matrix-score" id="innovationScore">94</div>
-<div class="matrix-label">
-Innovation
-</div>
-</div>
-
-<div class="matrix-card">
-<div class="matrix-score" id="resilienceScore">76</div>
-<div class="matrix-label">
-Resilience
-</div>
-</div>
-
-<div class="matrix-card">
-<div class="matrix-score" id="interoperabilityScore">83</div>
-<div class="matrix-label">
-Interoperability
-</div>
-</div>
-
-<div class="matrix-card">
-<div class="matrix-score" id="governanceScore">72</div>
-<div class="matrix-label">
-Governance
-</div>
 </div>
 
 </div>
@@ -590,220 +954,110 @@ Governance
 </section>
 
 
-<style>
-
-.dashboard-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-gap:20px;
-}
-
-.metric-card{
-background:var(--panel);
-border:1px solid var(--line);
-padding:32px;
-border-radius:28px;
-}
-
-.metric-title{
-color:var(--muted);
-font-size:14px;
-margin-bottom:18px;
-}
-
-.metric-value{
-font-size:60px;
-font-weight:900;
-color:var(--gold);
-}
-
-.metric-state{
-font-size:42px;
-font-weight:900;
-color:var(--cyan);
-}
-
-.transmission-grid{
-display:grid;
-gap:25px;
-}
-
-.transmission-card{
-background:var(--panel);
-border-radius:28px;
-padding:30px;
-border:1px solid var(--line);
-}
-
-.transmission-card h3{
-font-size:34px;
-margin-bottom:20px;
-}
-
-.bar-bg{
-height:18px;
-background:#1a2533;
-border-radius:30px;
-overflow:hidden;
-margin-bottom:20px;
-}
-
-.bar-fill{
-height:100%;
-width:80%;
-border-radius:30px;
-}
-
-.gold{
-background:linear-gradient(90deg,#f7c84b,#ffe786);
-}
-
-.cyan{
-background:linear-gradient(90deg,#4eeeff,#7fffff);
-}
-
-.purple{
-background:linear-gradient(90deg,#8d5cff,#cfadff);
-}
-
-.green{
-background:linear-gradient(90deg,#4cff97,#7bffbd);
-}
-
-.bar-text{
-color:var(--muted);
-line-height:1.7;
-}
-
-.institution-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:20px;
-}
-
-.institution-card{
-background:var(--panel);
-padding:30px;
-border-radius:28px;
-border:1px solid var(--line);
-}
-
-.institution-card h3{
-font-size:28px;
-margin-bottom:20px;
-}
-
-.institution-card ul{
-line-height:2;
-color:var(--muted);
-padding-left:20px;
-}
-
-.matrix-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-gap:20px;
-}
-
-.matrix-card{
-background:var(--panel);
-padding:30px;
-text-align:center;
-border-radius:28px;
-border:1px solid var(--line);
-}
-
-.matrix-score{
-font-size:60px;
-font-weight:900;
-color:var(--gold);
-margin-bottom:15px;
-}
-
-.matrix-label{
-color:var(--muted);
-font-size:18px;
-}
-
-</style>
-<section class="section">
-
-<h2>
-Future Network Map
-</h2>
-
-<p>
-Visualizing the future architecture of money, markets and settlement infrastructure.</p>
-
-<div class="network-container">
-
-<div class="network-core">
-Future
-Core
-</div>
-
-<div class="node cbdc">CBDC</div>
-<div class="node bonds">Bonds</div>
-<div class="node rwa">RWA</div>
-<div class="node stablecoins">Stablecoins</div>
-<div class="node ai">AI</div>
-<div class="node identity">Identity</div>
-
-</div>
-
-</section>
-
 
 <section class="section">
 
 <h2>
-<section class="section">
 
-<h2>
 Quantum Adoption Matrix
+
 </h2>
 
 <p>
 
-Dynamic scenario scores across the future financial system.
+A fictional readiness framework inspired by future financial systems.
 
 </p>
 
 <div class="matrix-grid">
 
+
 <div class="matrix-card">
-<div class="matrix-score" id="efficiencyScore">88</div>
+
+<div class="matrix-score" id="efficiencyScore">
+
+92
+
+</div>
+
 <div class="matrix-label">
+
 Efficiency
-</div>
+
 </div>
 
+</div>
+
+
+
 <div class="matrix-card">
-<div class="matrix-score" id="innovationScore">95</div>
+
+<div class="matrix-score" id="innovationScore">
+
+96
+
+</div>
+
 <div class="matrix-label">
+
 Innovation
-</div>
+
 </div>
 
+</div>
+
+
+
 <div class="matrix-card">
-<div class="matrix-score" id="resilienceScore">76</div>
+
+<div class="matrix-score" id="resilienceScore">
+
+79
+
+</div>
+
 <div class="matrix-label">
+
 Resilience
-</div>
+
 </div>
 
+</div>
+
+
+
 <div class="matrix-card">
-<div class="matrix-score" id="interopScore">84</div>
+
+<div class="matrix-score" id="interoperabilityScore">
+
+88
+
+</div>
+
 <div class="matrix-label">
+
 Interoperability
-</div>
+
 </div>
 
-<div class="matrix-card">
-<div class="matrix-score" id="governanceScore">72</div>
-<div class="matrix-label">
-Governance
 </div>
+
+
+
+<div class="matrix-card">
+
+<div class="matrix-score" id="governanceScore">
+
+74
+
+</div>
+
+<div class="matrix-label">
+
+Governance
+
+</div>
+
 </div>
 
 </div>
@@ -812,6 +1066,243 @@ Governance
 
 
 
+<style>
+
+.dashboard-grid{
+
+display:grid;
+
+grid-template-columns:
+
+repeat(auto-fit,minmax(250px,1fr));
+
+gap:20px;
+
+}
+
+.metric-card{
+
+background:var(--panel);
+
+border:1px solid var(--line);
+
+padding:35px;
+
+border-radius:30px;
+
+}
+
+.metric-title{
+
+color:var(--muted);
+
+font-size:14px;
+
+margin-bottom:20px;
+
+}
+
+.metric-value{
+
+font-size:65px;
+
+font-weight:900;
+
+color:var(--gold);
+
+}
+
+.metric-state{
+
+font-size:42px;
+
+font-weight:900;
+
+color:var(--cyan);
+
+}
+
+
+
+.channel-grid{
+
+display:grid;
+
+gap:20px;
+
+}
+
+.channel-card{
+
+background:var(--panel);
+
+border-radius:30px;
+
+padding:30px;
+
+border:1px solid var(--line);
+
+}
+
+.channel-card h3{
+
+margin-bottom:20px;
+
+font-size:30px;
+
+}
+
+.bar-bg{
+
+height:18px;
+
+background:#16263b;
+
+border-radius:30px;
+
+overflow:hidden;
+
+margin-bottom:20px;
+
+}
+
+.bar-fill{
+
+height:100%;
+
+border-radius:30px;
+
+transition:1s;
+
+}
+
+.gold{
+
+background:linear-gradient(90deg,#f7c84b,#ffe78d);
+
+}
+
+.cyan{
+
+background:linear-gradient(90deg,#4eeeff,#93ffff);
+
+}
+
+.purple{
+
+background:linear-gradient(90deg,#9b5cff,#d2b8ff);
+
+}
+
+.green{
+
+background:linear-gradient(90deg,#65ff9a,#9fffc0);
+
+}
+
+.channel-text{
+
+color:var(--muted);
+
+line-height:1.8;
+
+}
+
+
+
+.institution-grid{
+
+display:grid;
+
+grid-template-columns:
+
+repeat(auto-fit,minmax(260px,1fr));
+
+gap:20px;
+
+}
+
+.institution-card{
+
+background:var(--panel);
+
+padding:30px;
+
+border-radius:30px;
+
+border:1px solid var(--line);
+
+}
+
+.institution-card h3{
+
+margin-bottom:20px;
+
+font-size:28px;
+
+}
+
+.institution-card ul{
+
+padding-left:20px;
+
+line-height:2;
+
+color:var(--muted);
+
+}
+
+
+
+.matrix-grid{
+
+display:grid;
+
+grid-template-columns:
+
+repeat(auto-fit,minmax(180px,1fr));
+
+gap:20px;
+
+}
+
+.matrix-card{
+
+background:var(--panel);
+
+padding:35px;
+
+border-radius:30px;
+
+text-align:center;
+
+border:1px solid var(--line);
+
+}
+
+.matrix-score{
+
+font-size:60px;
+
+font-weight:900;
+
+color:var(--gold);
+
+margin-bottom:15px;
+
+transition:1s;
+
+}
+
+.matrix-label{
+
+color:var(--muted);
+
+font-size:18px;
+
+}
+
+</style>
 <section class="section">
 
 <h2>
@@ -820,42 +1311,104 @@ Future Timeline
 
 </h2>
 
+<p>
+
+Potential evolution paths across the next decades.
+
+</p>
+
 <div class="timeline">
 
 <div class="time-card">
 <h3>2025</h3>
 <p id="t1">
-
-Pilot projects and experimentation.
-
+Tokenized bond pilots.
 </p>
 </div>
 
 <div class="time-card">
 <h3>2030</h3>
 <p id="t2">
-
-Tokenized collateral.
-
+Digital collateral rails.
 </p>
 </div>
 
 <div class="time-card">
 <h3>2040</h3>
 <p id="t3">
-
-Programmable markets.
-
+Programmable debt markets.
 </p>
 </div>
 
 <div class="time-card">
 <h3>2050</h3>
 <p id="t4">
+Global tokenized settlement.
+</p>
+</div>
 
-Integrated financial infrastructure.
+</div>
+
+</section>
+
+
+
+<section class="section">
+
+<h2>
+
+Future Network Map
+
+</h2>
+
+<p>
+
+A conceptual architecture of future financial infrastructure.
 
 </p>
+
+<div class="network">
+
+<div class="center-node">
+
+FUTURE<br>CORE
+
+</div>
+
+<div class="orbit-node node-a">
+
+CBDC
+
+</div>
+
+<div class="orbit-node node-b">
+
+AI
+
+</div>
+
+<div class="orbit-node node-c">
+
+Stablecoins
+
+</div>
+
+<div class="orbit-node node-d">
+
+RWA
+
+</div>
+
+<div class="orbit-node node-e">
+
+Bonds
+
+</div>
+
+<div class="orbit-node node-f">
+
+Identity
+
 </div>
 
 </div>
@@ -866,13 +1419,206 @@ Integrated financial infrastructure.
 
 <footer>
 
+<h1>
+
 BondStats Future Finance Lab
 
-<br><br>
+</h1>
+
+<p>
 
 Explore. Imagine. Prepare.
 
+</p>
+
 </footer>
+
+
+
+<style>
+
+.timeline{
+
+display:grid;
+
+grid-template-columns:
+
+repeat(auto-fit,minmax(220px,1fr));
+
+gap:20px;
+
+}
+
+.time-card{
+
+background:var(--panel);
+
+padding:30px;
+
+border-radius:30px;
+
+border:1px solid var(--line);
+
+}
+
+.time-card h3{
+
+font-size:40px;
+
+color:var(--gold);
+
+margin-bottom:20px;
+
+}
+
+.time-card p{
+
+color:var(--muted);
+
+line-height:1.8;
+
+}
+
+.network{
+
+position:relative;
+
+height:500px;
+
+border-radius:40px;
+
+background:var(--panel);
+
+border:1px solid var(--line);
+
+overflow:hidden;
+
+}
+
+.center-node{
+
+position:absolute;
+
+top:50%;
+left:50%;
+
+transform:translate(-50%,-50%);
+
+width:180px;
+height:180px;
+
+border-radius:50%;
+
+background:
+
+linear-gradient(
+135deg,
+var(--cyan),
+var(--purple));
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+text-align:center;
+
+font-weight:900;
+
+font-size:28px;
+
+color:#07111f;
+
+box-shadow:
+
+0 0 80px rgba(78,238,255,.3);
+
+}
+
+.orbit-node{
+
+position:absolute;
+
+padding:16px 22px;
+
+background:#0d1b2d;
+
+border-radius:20px;
+
+border:1px solid var(--line);
+
+font-weight:700;
+
+}
+
+.node-a{
+
+top:40px;
+left:50%;
+transform:translateX(-50%);
+
+}
+
+.node-b{
+
+right:80px;
+top:120px;
+
+}
+
+.node-c{
+
+right:100px;
+bottom:100px;
+
+}
+
+.node-d{
+
+left:100px;
+bottom:100px;
+
+}
+
+.node-e{
+
+left:80px;
+top:120px;
+
+}
+
+.node-f{
+
+bottom:40px;
+left:50%;
+transform:translateX(-50%);
+
+}
+
+footer{
+
+padding:100px 0;
+
+text-align:center;
+
+}
+
+footer h1{
+
+font-size:70px;
+
+margin-bottom:20px;
+
+}
+
+footer p{
+
+font-size:22px;
+
+color:var(--muted);
+
+}
+
+</style>
 
 
 
@@ -888,14 +1634,14 @@ adoption:"High",
 speed:"Gradual",
 
 payments:85,
-bonds:96,
-banks:75,
+bonds:95,
+banks:76,
 cross:80,
 
-efficiency:93,
+efficiency:92,
 innovation:96,
 resilience:79,
-interop:88,
+interoperability:88,
 governance:74,
 
 timeline:[
@@ -909,54 +1655,135 @@ timeline:[
 
 cbdc:{
 
-readiness:69,
+readiness:70,
 stability:"High",
 adoption:"Moderate",
 speed:"Slow",
 
-payments:96,
-bonds:55,
-banks:88,
-cross:83,
+payments:97,
+bonds:65,
+banks:90,
+cross:84,
 
-efficiency:85,
-innovation:78,
-resilience:91,
-interop:86,
-governance:94,
+efficiency:88,
+innovation:81,
+resilience:94,
+interoperability:89,
+governance:96,
 
 timeline:[
 "Wholesale CBDC pilots.",
 "CBDC interoperability.",
 "Cross-border settlement.",
-"Integrated central bank rails."
+"Integrated monetary rails."
+]
+
+},
+
+stablecoins:{
+
+readiness:79,
+stability:"Moderate",
+adoption:"High",
+speed:"Fast",
+
+payments:93,
+bonds:55,
+banks:70,
+cross:96,
+
+efficiency:90,
+innovation:88,
+resilience:73,
+interoperability:91,
+governance:68,
+
+timeline:[
+"Stablecoin ecosystems.",
+"Programmable payments.",
+"Cross-chain finance.",
+"Global digital liquidity."
+]
+
+},
+
+rwa:{
+
+readiness:85,
+stability:"High",
+adoption:"High",
+speed:"Fast",
+
+payments:80,
+bonds:90,
+banks:84,
+cross:88,
+
+efficiency:95,
+innovation:97,
+resilience:84,
+interoperability:93,
+governance:81,
+
+timeline:[
+"RWA tokenization pilots.",
+"Digital collateral markets.",
+"Programmable assets.",
+"Integrated asset infrastructure."
 ]
 
 },
 
 ai:{
 
-readiness:92,
+readiness:93,
 stability:"High",
 adoption:"Very High",
 speed:"Fast",
 
 payments:82,
 bonds:78,
-banks:84,
+banks:88,
 cross:83,
 
-efficiency:96,
+efficiency:97,
 innovation:99,
-resilience:87,
-interop:81,
-governance:76,
+resilience:89,
+interoperability:82,
+governance:78,
 
 timeline:[
 "AI supervision.",
 "Autonomous analytics.",
-"Predictive systems.",
-"AI infrastructure layer."
+"Predictive infrastructures.",
+"AI financial layer."
+]
+
+},
+
+crossborder:{
+
+readiness:80,
+stability:"Moderate",
+adoption:"High",
+speed:"Gradual",
+
+payments:95,
+bonds:70,
+banks:78,
+cross:99,
+
+efficiency:94,
+innovation:92,
+resilience:84,
+interoperability:98,
+governance:86,
+
+timeline:[
+"Cross-border pilots.",
+"Settlement harmonization.",
+"Global rails.",
+"Integrated payment infrastructure."
 ]
 
 }
@@ -982,7 +1809,7 @@ document.getElementById("crossBar").style.width=s.cross+"%";
 document.getElementById("efficiencyScore").innerHTML=s.efficiency;
 document.getElementById("innovationScore").innerHTML=s.innovation;
 document.getElementById("resilienceScore").innerHTML=s.resilience;
-document.getElementById("interopScore").innerHTML=s.interop;
+document.getElementById("interoperabilityScore").innerHTML=s.interoperability;
 document.getElementById("governanceScore").innerHTML=s.governance;
 
 document.getElementById("t1").innerHTML=s.timeline[0];
@@ -996,14 +1823,14 @@ document.getElementById("t4").innerHTML=s.timeline[3];
 
 document.querySelectorAll(".future-btn").forEach(btn=>{
 
-btn.addEventListener("click",()=>{
+btn.addEventListener("click",function(){
 
 document.querySelectorAll(".future-btn")
 .forEach(x=>x.classList.remove("active"));
 
-btn.classList.add("active");
+this.classList.add("active");
 
-updateScenario(btn.dataset.scenario);
+updateScenario(this.dataset.scenario);
 
 });
 
