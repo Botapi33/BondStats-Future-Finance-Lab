@@ -757,32 +757,53 @@ Core
 <section class="section">
 
 <h2>
-Quantum Adoption Index
+<section class="section">
+
+<h2>
+Quantum Adoption Matrix
 </h2>
 
 <p>
-A fictional framework illustrating potential adoption paths.</p>
+
+Dynamic scenario scores across the future financial system.
+
+</p>
 
 <div class="matrix-grid">
 
 <div class="matrix-card">
-<div class="matrix-score" id="tokenScore">86</div>
-<div class="matrix-label">Tokenization</div>
+<div class="matrix-score" id="efficiencyScore">88</div>
+<div class="matrix-label">
+Efficiency
+</div>
 </div>
 
 <div class="matrix-card">
-<div class="matrix-score" id="cbdcScore">71</div>
-<div class="matrix-label">CBDC</div>
+<div class="matrix-score" id="innovationScore">95</div>
+<div class="matrix-label">
+Innovation
+</div>
 </div>
 
 <div class="matrix-card">
-<div class="matrix-score" id="aiScore">92</div>
-<div class="matrix-label">AI</div>
+<div class="matrix-score" id="resilienceScore">76</div>
+<div class="matrix-label">
+Resilience
+</div>
 </div>
 
 <div class="matrix-card">
-<div class="matrix-score" id="rwaScore">79</div>
-<div class="matrix-label">RWA</div>
+<div class="matrix-score" id="interopScore">84</div>
+<div class="matrix-label">
+Interoperability
+</div>
+</div>
+
+<div class="matrix-card">
+<div class="matrix-score" id="governanceScore">72</div>
+<div class="matrix-label">
+Governance
+</div>
 </div>
 
 </div>
@@ -790,37 +811,57 @@ A fictional framework illustrating potential adoption paths.</p>
 </section>
 
 
+
 <section class="section">
 
 <h2>
-Future Timeline 2025–2050
+
+Future Timeline
+
 </h2>
 
 <div class="timeline">
 
 <div class="time-card">
 <h3>2025</h3>
-<p>Digital asset pilots and AI supervision.</p>
+<p id="t1">
+
+Pilot projects and experimentation.
+
+</p>
 </div>
 
 <div class="time-card">
 <h3>2030</h3>
-<p>Tokenized collateral and settlement expansion.</p>
+<p id="t2">
+
+Tokenized collateral.
+
+</p>
 </div>
 
 <div class="time-card">
 <h3>2040</h3>
-<p>Programmable markets and interoperable money rails.</p>
+<p id="t3">
+
+Programmable markets.
+
+</p>
 </div>
 
 <div class="time-card">
 <h3>2050</h3>
-<p>Fully integrated digital financial infrastructure.</p>
+<p id="t4">
+
+Integrated financial infrastructure.
+
+</p>
 </div>
 
 </div>
 
 </section>
+
 
 
 <footer>
@@ -835,274 +876,122 @@ Explore. Imagine. Prepare.
 
 
 
-<style>
-
-.network-container{
-height:500px;
-position:relative;
-border-radius:35px;
-background:#07111f;
-overflow:hidden;
-border:1px solid var(--line);
-}
-
-.network-core{
-position:absolute;
-top:50%;
-left:50%;
-transform:translate(-50%,-50%);
-width:180px;
-height:180px;
-border-radius:50%;
-background:linear-gradient(135deg,var(--cyan),var(--purple));
-display:flex;
-justify-content:center;
-align-items:center;
-font-size:32px;
-font-weight:900;
-text-align:center;
-box-shadow:0 0 80px rgba(78,238,255,.35);
-}
-
-.node{
-position:absolute;
-padding:18px 25px;
-border-radius:20px;
-background:#0c1b2e;
-border:1px solid rgba(255,255,255,.15);
-font-weight:800;
-}
-
-.cbdc{
-top:50px;
-left:50%;
-transform:translateX(-50%);
-}
-
-.bonds{
-right:80px;
-top:180px;
-}
-
-.rwa{
-right:180px;
-bottom:70px;
-}
-
-.stablecoins{
-left:100px;
-bottom:70px;
-}
-
-.ai{
-left:60px;
-top:170px;
-}
-
-.identity{
-top:340px;
-left:50%;
-transform:translateX(-50%);
-}
-
-.timeline{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
-gap:20px;
-}
-
-.time-card{
-padding:30px;
-background:var(--panel);
-border-radius:28px;
-border:1px solid var(--line);
-}
-
-.time-card h3{
-font-size:40px;
-color:var(--gold);
-margin-bottom:20px;
-}
-
-.time-card p{
-color:var(--muted);
-line-height:1.7;
-}
-
-footer{
-margin:80px 0;
-text-align:center;
-color:var(--muted);
-font-size:18px;
-}
-
-</style>
-
-
-
 <script>
 
-const scenarios = {
+const scenarios={
 
 tokenizedBonds:{
+
 readiness:81,
 stability:"Moderate",
 adoption:"High",
 speed:"Gradual",
 
-payments:88,
-bonds:95,
-banks:72,
-cross:86,
+payments:85,
+bonds:96,
+banks:75,
+cross:80,
 
-token:91,
-cbdc:63,
-ai:78,
-rwa:94
+efficiency:93,
+innovation:96,
+resilience:79,
+interop:88,
+governance:74,
+
+timeline:[
+"Tokenized bond pilots.",
+"Digital collateral rails.",
+"Programmable debt markets.",
+"Global tokenized settlement."
+]
+
 },
 
 cbdc:{
-readiness:68,
+
+readiness:69,
 stability:"High",
 adoption:"Moderate",
 speed:"Slow",
 
-payments:95,
-bonds:50,
-banks:80,
-cross:82,
+payments:96,
+bonds:55,
+banks:88,
+cross:83,
 
-token:62,
-cbdc:94,
-ai:70,
-rwa:65
-},
+efficiency:85,
+innovation:78,
+resilience:91,
+interop:86,
+governance:94,
 
-stablecoins:{
-readiness:78,
-stability:"Medium",
-adoption:"High",
-speed:"Fast",
+timeline:[
+"Wholesale CBDC pilots.",
+"CBDC interoperability.",
+"Cross-border settlement.",
+"Integrated central bank rails."
+]
 
-payments:92,
-bonds:48,
-banks:60,
-cross:90,
-
-token:78,
-cbdc:55,
-ai:72,
-rwa:66
-},
-
-collateral:{
-readiness:74,
-stability:"Moderate",
-adoption:"High",
-speed:"Gradual",
-
-payments:70,
-bonds:88,
-banks:76,
-cross:78,
-
-token:83,
-cbdc:68,
-ai:74,
-rwa:91
-},
-
-rwa:{
-readiness:83,
-stability:"High",
-adoption:"High",
-speed:"Fast",
-
-payments:76,
-bonds:90,
-banks:80,
-cross:85,
-
-token:90,
-cbdc:70,
-ai:80,
-rwa:96
-},
-
-identity:{
-readiness:66,
-stability:"Moderate",
-adoption:"Medium",
-speed:"Slow",
-
-payments:65,
-bonds:45,
-banks:75,
-cross:60,
-
-token:55,
-cbdc:62,
-ai:84,
-rwa:58
 },
 
 ai:{
+
 readiness:92,
 stability:"High",
 adoption:"Very High",
 speed:"Fast",
 
-payments:86,
+payments:82,
 bonds:78,
-banks:82,
-cross:84,
+banks:84,
+cross:83,
 
-token:81,
-cbdc:76,
-ai:99,
-rwa:80
-},
+efficiency:96,
+innovation:99,
+resilience:87,
+interop:81,
+governance:76,
 
-crossborder:{
-readiness:79,
-stability:"Moderate",
-adoption:"High",
-speed:"Gradual",
+timeline:[
+"AI supervision.",
+"Autonomous analytics.",
+"Predictive systems.",
+"AI infrastructure layer."
+]
 
-payments:94,
-bonds:62,
-banks:73,
-cross:97,
-
-token:82,
-cbdc:72,
-ai:79,
-rwa:77
 }
 
 };
 
 
+
 function updateScenario(name){
 
-let s = scenarios[name];
+let s=scenarios[name];
 
-readinessValue.innerHTML = s.readiness;
-stabilityValue.innerHTML = s.stability;
-adoptionValue.innerHTML = s.adoption;
-speedValue.innerHTML = s.speed;
+document.getElementById("readinessValue").innerHTML=s.readiness;
+document.getElementById("stabilityValue").innerHTML=s.stability;
+document.getElementById("adoptionValue").innerHTML=s.adoption;
+document.getElementById("speedValue").innerHTML=s.speed;
 
-paymentsBar.style.width = s.payments + "%";
-bondBar.style.width = s.bonds + "%";
-bankBar.style.width = s.banks + "%";
-crossBar.style.width = s.cross + "%";
+document.getElementById("paymentsBar").style.width=s.payments+"%";
+document.getElementById("bondBar").style.width=s.bonds+"%";
+document.getElementById("bankBar").style.width=s.banks+"%";
+document.getElementById("crossBar").style.width=s.cross+"%";
 
-tokenScore.innerHTML = s.token;
-cbdcScore.innerHTML = s.cbdc;
-aiScore.innerHTML = s.ai;
-rwaScore.innerHTML = s.rwa;
+document.getElementById("efficiencyScore").innerHTML=s.efficiency;
+document.getElementById("innovationScore").innerHTML=s.innovation;
+document.getElementById("resilienceScore").innerHTML=s.resilience;
+document.getElementById("interopScore").innerHTML=s.interop;
+document.getElementById("governanceScore").innerHTML=s.governance;
+
+document.getElementById("t1").innerHTML=s.timeline[0];
+document.getElementById("t2").innerHTML=s.timeline[1];
+document.getElementById("t3").innerHTML=s.timeline[2];
+document.getElementById("t4").innerHTML=s.timeline[3];
 
 }
+
 
 
 document.querySelectorAll(".future-btn").forEach(btn=>{
@@ -1124,3 +1013,6 @@ updateScenario(btn.dataset.scenario);
 updateScenario("tokenizedBonds");
 
 </script>
+
+</body>
+</html>
