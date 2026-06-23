@@ -942,89 +942,185 @@ font-size:18px;
 
 <script>
 
-const scenarios={
+const scenarios = {
 
 tokenizedBonds:{
 readiness:81,
 stability:"Moderate",
 adoption:"High",
-speed:"Gradual"
+speed:"Gradual",
+
+payments:88,
+bonds:95,
+banks:72,
+cross:86,
+
+token:91,
+cbdc:63,
+ai:78,
+rwa:94
 },
 
 cbdc:{
 readiness:68,
 stability:"High",
 adoption:"Moderate",
-speed:"Slow"
+speed:"Slow",
+
+payments:95,
+bonds:50,
+banks:80,
+cross:82,
+
+token:62,
+cbdc:94,
+ai:70,
+rwa:65
 },
 
 stablecoins:{
 readiness:78,
 stability:"Medium",
 adoption:"High",
-speed:"Fast"
+speed:"Fast",
+
+payments:92,
+bonds:48,
+banks:60,
+cross:90,
+
+token:78,
+cbdc:55,
+ai:72,
+rwa:66
 },
 
 collateral:{
 readiness:74,
 stability:"Moderate",
 adoption:"High",
-speed:"Gradual"
+speed:"Gradual",
+
+payments:70,
+bonds:88,
+banks:76,
+cross:78,
+
+token:83,
+cbdc:68,
+ai:74,
+rwa:91
 },
 
 rwa:{
 readiness:83,
 stability:"High",
 adoption:"High",
-speed:"Fast"
+speed:"Fast",
+
+payments:76,
+bonds:90,
+banks:80,
+cross:85,
+
+token:90,
+cbdc:70,
+ai:80,
+rwa:96
 },
 
 identity:{
 readiness:66,
 stability:"Moderate",
 adoption:"Medium",
-speed:"Slow"
+speed:"Slow",
+
+payments:65,
+bonds:45,
+banks:75,
+cross:60,
+
+token:55,
+cbdc:62,
+ai:84,
+rwa:58
 },
 
 ai:{
 readiness:92,
 stability:"High",
 adoption:"Very High",
-speed:"Fast"
+speed:"Fast",
+
+payments:86,
+bonds:78,
+banks:82,
+cross:84,
+
+token:81,
+cbdc:76,
+ai:99,
+rwa:80
 },
 
 crossborder:{
 readiness:79,
 stability:"Moderate",
 adoption:"High",
-speed:"Gradual"
+speed:"Gradual",
+
+payments:94,
+bonds:62,
+banks:73,
+cross:97,
+
+token:82,
+cbdc:72,
+ai:79,
+rwa:77
 }
 
 };
 
 
+function updateScenario(name){
+
+let s = scenarios[name];
+
+readinessValue.innerHTML = s.readiness;
+stabilityValue.innerHTML = s.stability;
+adoptionValue.innerHTML = s.adoption;
+speedValue.innerHTML = s.speed;
+
+paymentsBar.style.width = s.payments + "%";
+bondBar.style.width = s.bonds + "%";
+bankBar.style.width = s.banks + "%";
+crossBar.style.width = s.cross + "%";
+
+tokenScore.innerHTML = s.token;
+cbdcScore.innerHTML = s.cbdc;
+aiScore.innerHTML = s.ai;
+rwaScore.innerHTML = s.rwa;
+
+}
+
 
 document.querySelectorAll(".future-btn").forEach(btn=>{
 
-btn.onclick=()=>{
+btn.addEventListener("click",()=>{
 
 document.querySelectorAll(".future-btn")
 .forEach(x=>x.classList.remove("active"));
 
 btn.classList.add("active");
 
-let s=scenarios[btn.dataset.scenario];
-
-document.getElementById("readinessValue").innerHTML=s.readiness;
-document.getElementById("stabilityValue").innerHTML=s.stability;
-document.getElementById("adoptionValue").innerHTML=s.adoption;
-document.getElementById("speedValue").innerHTML=s.speed;
-
-};
+updateScenario(btn.dataset.scenario);
 
 });
 
-</script>
+});
 
-</body>
-</html>
+
+updateScenario("tokenizedBonds");
+
+</script>
